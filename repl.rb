@@ -11,7 +11,6 @@ loop do
     y = command[9].to_i
     face = command[12..20].chomp.capitalize
     robot = Robot.new(x, y, face)
-    puts "Нахожусь на меcте: #{x}, #{y}, #{face} "
   elsif command == 'move'
     robot.move
   elsif command == 'left'
@@ -19,8 +18,8 @@ loop do
   elsif command == 'right'
     robot.right
   elsif command == 'report'
-    robot.report
-    #puts "Доклад: #{x}, #{y}, #{face} "
+    a = robot.report
+    puts " Доклад: #{a} "
   elsif command =~ /q|Q/
     break
   else
