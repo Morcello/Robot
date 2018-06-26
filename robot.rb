@@ -2,34 +2,25 @@ class Robot
   DIRECTION = %w[North East South West]
 
   def initialize (x, y, face)
-    @x, @y, @face = x, y, DIRECTION.index(face)
+  @x, @y, @face =x, y, DIRECTION.index(face)
   end
 
   def move
-    if @face == 0
-      @y += 1
-    end
-    if @face == 2
-      @y -= 1
-    end
-    if @face == 3
-      @x += 1
-    end
-    if @face == 1
-      @x -= 1
-    end
+    @y += 1 if @face == 0
+    @x += 1 if @face == 3
+    @y -= 1 if @face == 2
+    @x -= 1 if @face == 1
   end
 
   def left
-    @face = ( @face - 1 ) % 5
+    @face = ( @face - 1 ) % 4
   end
 
   def right
-    @face = ( @face + 1 ) % 5
+    @face = ( @face + 1 ) % 4
   end
 
   def report
-    face = DIRECTION[@face]
-    puts "Доклад: #{@x}, #{@y}, #{@face} "
+    [@x, @y, DIRECTION[@face]]
   end
 end
