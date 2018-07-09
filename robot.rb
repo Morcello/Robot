@@ -1,8 +1,8 @@
 class Robot
   DIRECTION = %w[North East South West]
 
-  def initialize (x, y, face)
-  @x, @y, @face =x, y, DIRECTION.index(face)
+  def initialize(x, y, face)
+    @x, @y, @face = x, y, DIRECTION.index(face)
   end
 
   def move
@@ -13,11 +13,11 @@ class Robot
   end
 
   def left
-    @face = ( @face - 1 ) % 4
+    @face = (@face - 1) % 4
   end
 
   def right
-    @face = ( @face + 1 ) % 4
+    @face = (@face + 1) % 4
   end
 
   def report
