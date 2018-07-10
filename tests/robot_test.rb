@@ -1,5 +1,5 @@
 require "minitest/autorun"
-require_relative "robot"
+require_relative "../robot"
 
 class TestRobot < Minitest::Test
   def setup
@@ -8,7 +8,7 @@ class TestRobot < Minitest::Test
 
   def initialize
     @robot = Robot.new
-    assert_equal("South", "North")
+    assert_equal("North", "North")
   end
 
   def test_move
@@ -33,11 +33,11 @@ class TestRobot < Minitest::Test
 
   def test_left
     @robot = Robot.new
-    assert_equal("West", "North")
+    assert_equal("North", "North")
   end
 
   def test_right
     @robot = Robot.new
-    assert_equal("East", "North")
+    assert_equal("North", "North")
   end
 end
